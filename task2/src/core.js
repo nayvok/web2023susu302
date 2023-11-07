@@ -29,7 +29,9 @@ function recSumTo(n) {
 }
 
 //Напишите функцию, считающую факториал заданного числа
-function factorial(n) {}
+function factorial(n) {
+    return n * (n>1 ? factorial(--n) : 1);
+}
 
 //Напишите функцию, которая определяет, является ли число двойкой, возведенной в степень
 function isBinary(n) {}
