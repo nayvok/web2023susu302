@@ -34,7 +34,9 @@ function factorial(n) {
 }
 
 //Напишите функцию, которая определяет, является ли число двойкой, возведенной в степень
-function isBinary(n) {}
+function isBinary(n) {
+    return n > 0 && (n & (n - 1)) === 0;
+}
 
 //Напишите функцию, которая находит N-е число Фибоначчи
 function fibonacci(n) {}
