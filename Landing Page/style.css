@@ -13,6 +13,8 @@ body{
 h1{
     font-weight: 900;
     line-height: 48px;
+    font-size: 44px;
+    padding: 76px 0px 24px 0px;
 }
 
 h2{
@@ -71,7 +73,26 @@ a{
 }
 
 .container__title{
-    padding: 76px 0px 24px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__title h1{
+    padding: 0 0 24px;
+}
+
+.container__title .btn{
+    margin-top: 40px;
+}
+
+.container__promo{
+    padding: 40px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+
 }
 
 .container__section{
