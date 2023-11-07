@@ -99,7 +99,31 @@ function sequence(start=0, step=1) {
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 33], text: 'text'}) // true
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
-function deepEqual(firstObject, secondObject) {}
+function deepEqual(firstObject, secondObject) {
+    if (firstObject === secondObject) {
+        return true;
+    }
+
+    if (typeof firstObject !== 'object' || typeof secondObject !== 'object' || firstObject === null || secondObject === null) {
+        if (Number.isNaN(firstObject) && Number.isNaN(secondObject)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (Object.keys(firstObject).length !== Object.keys(secondObject).length) {
+        return false;
+    }
+
+    for (let key of Object.keys(firstObject)) {
+        if (!Object.keys(secondObject).includes(key) || !deepEqual(firstObject[key], secondObject[key])) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 module.exports = {
     isInteger,
