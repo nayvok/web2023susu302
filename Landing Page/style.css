@@ -1,0 +1,257 @@
+/* Импорт шрифта Roboto 400, 700, 900 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+/* Общие настройки */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* Цвета */
+    --main-bg-color: #F6F7F8;
+    --link-color: #336FEE;
+    --btn-color: #FFDD2D;
+    --btn-hover-color: #FCC521;
+    --btn-active-color: #FAB619;
+    --btn-border-color: rgba(51, 51, 51, 0.48);
+    --step-el-color: #333;
+    --bg-el-color: #FFF;
+    --alpha-54: rgba(0, 0, 0, 0.54);
+}
+
+body{
+    background-color: var(--main-bg-color);
+    font-family: 'Roboto', sans-serif;
+
+}
+h1{
+    font-weight: 900;
+    line-height: 48px;
+    font-size: 44px;
+    padding: 76px 0px 24px 0px;
+}
+h2{
+   font-weight: 700;
+   line-height: 28px;
+}
+p, a, li{
+    font-weight: 400;
+}
+p{
+    font-size: 15px;
+    line-height: 24px;
+}
+a{
+    color: var(--link-color);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+
+/* Кнопка */
+.btn{
+    padding: 16px 36px 16px 36px;
+    border-radius: 8px;
+    background-color: var(--btn-color);
+    border: 0;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--btn-hover-color);
+    transition: 0.3s;
+}
+
+.btn:active{
+    background-color: var(--btn-active-color);
+}
+
+.btn:focus{
+    background-color: var(--btn-color);
+    border: 1px solid var(--btn-border-color);
+}
+
+
+/* Меню */
+header{
+    background-color: var(--bg-el-color);
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 128px 0px 128px;
+    margin-bottom: 40px;
+}
+
+.header__menu, .header__login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+}
+
+.header__login{
+    gap: 8px;
+}
+
+.nav__links{
+    list-style: none;
+    color: var(--alpha-54);
+    font-size: 13px;
+    line-height: 20px;
+
+}
+
+.nav__links li:not(:last-child){
+    margin-right: 24px;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 22px 0 22px;
+    cursor: pointer;
+}
+
+.nav__links li:hover{
+    color:rgba(0, 0, 0, 0.80);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.00);
+    box-shadow: 0px -2px 0px 0px #666 inset;
+    transition: 0.3s;
+
+}
+
+
+/* Контейнеры */
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 128px 0px 128px;
+}
+
+.container__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__title h1{
+    padding: 0 0 24px;
+}
+
+.container__title .btn{
+    margin-top: 40px;
+}
+
+.container__promo{
+    padding: 40px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+
+}
+
+.container__section{
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    padding: 24px 0px 24px 0px;
+}
+
+.container__footer{
+    padding: 108px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container__footer p{
+    color: var(--alpha-54);
+    font-size: 13px;
+    line-height: 20px;
+}
+
+/* Модификатор контейнера */
+.container_step{
+    padding: 52px 0px 24px 0px;
+}
+
+
+/* Футер */
+.footer__copyright{
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+/* Карточка */
+
+.card{
+    background-color: var(--bg-el-color);
+    border-radius: 24px;
+    padding: 32px;
+    position: relative;
+}
+
+.card__subtitle{
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 464px;
+}
+
+.card__subtitle span{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.card__subtitle img{
+    align-self: flex-start;
+}
+
+.card__icon{
+    margin-bottom: 44px;
+}
+
+/* Модификаторы карточки*/
+.card_sub_pw{
+    padding-top: 16px;
+    width: 272px;
+}
+
+.card_mini p{
+    margin-top: 24px;
+    text-align: center;
+    width: 176px;
+}
+
+.card_step span{
+    width: 56px;
+    height: 56px;
+    background-color: var(--step-el-color);
+    border-radius: 16px;
+    line-height: 32px;
+    font-size: 24px;
+    color: var(--bg-el-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: -28px;
+}
