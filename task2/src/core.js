@@ -24,7 +24,9 @@ function sumTo(n) {
 }
 
 //Напишите функцию, считающую сумму чисел до заданного используя рекурсию
-function recSumTo(n) {}
+function recSumTo(n) {
+    return n + (n>0 ? recSumTo(--n) : 0);
+}
 
 //Напишите функцию, считающую факториал заданного числа
 function factorial(n) {}
