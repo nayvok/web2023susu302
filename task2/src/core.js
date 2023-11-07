@@ -80,7 +80,10 @@ function getOperationFn(initialValue, operatorFn) {
  * console.log(generator()); // 7
  * console.log(generator()); // 9
  */
-function sequence(start, step) {}
+function sequence(start=0, step=1) {
+    let value = start - step;
+    return () => value += step;
+}
 
 /**
  * Напишите функцию deepEqual, которая принимает два значения
