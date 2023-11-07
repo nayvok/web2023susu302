@@ -4,7 +4,15 @@ function isInteger(n) {
 }
 
 //Напишите функцию, которая возвращает массив четных чисел от 2 до 20 включительно
-function even() {}
+function even() {
+    let evenNum = [];
+    for (i=2; i<=20; i++){
+        if (i%2 == 0){
+            evenNum.push(i);
+        }
+    }
+    return evenNum;
+}
 
 //Напишите функцию, считающую сумму чисел до заданного используя цикл
 function sumTo(n) {}
