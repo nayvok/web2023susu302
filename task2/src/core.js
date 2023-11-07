@@ -40,7 +40,7 @@ function isBinary(n) {
 
 //Напишите функцию, которая находит N-е число Фибоначчи
 function fibonacci(n) {
-    return n < 2 ? n : fibonacci(--n) + fibonacci(--n)
+    return n < 2 ? n : fibonacci(--n) + fibonacci(--n);
 }
 
 /** Напишите функцию, которая принимает начальное значение и функцию операции
@@ -54,7 +54,15 @@ function fibonacci(n) {
  * console.log(sumFn(5)) - 15
  * console.log(sumFn(3)) - 18
  */
-function getOperationFn(initialValue, operatorFn) {}
+function getOperationFn(initialValue, operatorFn) {
+    const func = (param) => {
+        initialValue = operatorFn(initialValue, param);
+        return initialValue;
+    };
+    return typeof operatorFn !== 'function' ?
+        () => initialValue : func
+}
+
 
 /**
  * Напишите функцию создания генератора арифметической последовательности.
