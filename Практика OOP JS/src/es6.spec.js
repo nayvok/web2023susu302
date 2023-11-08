@@ -45,11 +45,36 @@ describe('es6', () => {
     });
 
     describe('#Dictionary', () => {
+        const dic = new core.Dictionary();
         it('экземпляр класса создается', () => {
-            const dic = new core.Dictionary();
+            assert.strictEqual(dic.constructor, core.Dictionary);
+        });
 
-            // TODO
-            assert.strictEqual(!!dic, true);
+        it('слова добавляются в словарь', () => {
+            dic.addToDictionary("Слово", "Описание этого слова")
+            assert.strictEqual(dic.dictionary.has("Слово"), true);
+        });
+
+        it('добавляются только строки', () => {
+            dic.addToDictionary(1, " ")
+            dic.addToDictionary("Число", 2)
+            dic.addToDictionary(NaN, "нан")
+            dic.addToDictionary(undefined, "ноу")
+            dic.addToDictionary(null, "нall")
+            assert.strictEqual(dic.dictionary.has(1), false);
+            assert.strictEqual(dic.dictionary.has("Число"), false);
+            assert.strictEqual(dic.dictionary.has(NaN), false);
+            assert.strictEqual(dic.dictionary.has(undefined), false);
+            assert.strictEqual(dic.dictionary.has(null), false);
+        });
+
+        it('можно получить определение слова', () => {
+            assert.strictEqual(dic.getDefinition("Слово"), "Описание этого слова");
+        });
+
+        it('слова удаляются из словаря', () => {
+            dic.deleteFromDictionary("Слово");
+            assert.strictEqual(dic.dictionary.has("Слово"), false);
         });
     });
 });
