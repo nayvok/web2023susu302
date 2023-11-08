@@ -13,7 +13,9 @@ function fioToName(fio) {
 // преобразуйте массив чисел так, чтобы в нем остались только
 // уникальные элементы
 // присмотритесь к коллекции "Set"
-function filterUnique(array) {}
+function filterUnique(array) {
+    return Array.from(new Set(array));
+}
 
 // Задача: разница зарплат
 // в функцию приходит массив из n зарплат сотрудников фирмы
