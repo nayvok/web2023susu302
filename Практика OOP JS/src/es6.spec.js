@@ -31,6 +31,14 @@ describe('es6', () => {
             assert.strictEqual(core.calculateSalaryDifference([1, 2, 3]), 3);
         });
 
+        it('считает разницу корректно', () => {
+            assert.strictEqual(core.calculateSalaryDifference([5, 3, 1, 4, 7]), 7);
+        });
+
+        it('считает разницу корректно', () => {
+            assert.strictEqual(core.calculateSalaryDifference([7, 8, 7, 4, 2]), 4);
+        });
+
         it('на пустой массив возвращается falsy значение', () => {
             assert.strictEqual(!!core.calculateSalaryDifference([]), false);
         });

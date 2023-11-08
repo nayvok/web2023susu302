@@ -22,7 +22,11 @@ function filterUnique(array) {
 // ваша задача определить, во сколько раз зарплата самого высокооплачиваемого
 // сотрудника превышает зарплату самого низкооплачиваемого
 // присмотритесь к методу .reduce
-function calculateSalaryDifference(array) {}
+function calculateSalaryDifference(array) {
+    let max = Math.max(...array);
+    let min = Math.min(...array);
+    return max/min;
+}
 
 // Реализуйте класс "словарь слов" (как толковый словарь)
 // класс должен быть безопасным и работать только со словами
