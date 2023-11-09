@@ -4,7 +4,7 @@
  * Со звездочкой: реализовать метод, который возвращает расстояние от точки до центра координат (0, 0)
  */
 class Point {
-    constructor(x=0, y=0){
+    constructor(x=0, y=0) {
         this.x = x;
         this.y = y;
     }
@@ -21,7 +21,7 @@ class Point {
  * Реализовать статический метод, который возвращает расстояние между Point3D.
  */
 class Point3D extends Point {
-    constructor(x, y, z=0){
+    constructor(x, y, z=0) {
         super(x, y);
         this.z = z;
     }
@@ -37,7 +37,26 @@ class Point3D extends Point {
  * Со звездочкой: написать тесты методы класса (oop.spec.js)
  */
 class Queue {
+    constructor(arr=[]) {
+        this.arr = arr;
+    }
 
+    push(...item) {
+        this.arr.push(...item);
+
+    }
+
+    pop() {
+        return this.arr.shift();
+    }
+
+    clear() {
+        this.arr = [];
+    }
+
+    get size() {
+        return this.arr.length;
+    }
 }
 
 module.exports = {
