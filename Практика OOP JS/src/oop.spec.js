@@ -24,6 +24,13 @@ describe('ООП', () => {
             assert.strictEqual(point.x, 1);
             assert.strictEqual(point.y, 0);
         });
+
+        it('Находит верное расстояние от точки до центра координат (0, 0)', () => {
+            const point = new core.Point(5, 8);
+            // Округление до целых
+            assert.strictEqual(point.findDistance(), 9);
+
+        });
     });
 
     describe('#Point3D', () => {
