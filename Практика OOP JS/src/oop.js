@@ -21,7 +21,14 @@ class Point {
  * Реализовать статический метод, который возвращает расстояние между Point3D.
  */
 class Point3D extends Point {
-    static vectorLength(a, b) {}
+    constructor(x, y, z=0){
+        super(x, y);
+        this.z = z;
+    }
+
+    static vectorLength(a, b) {
+        return Math.sqrt((b.x - a.x)**2 + (b.y - a.y)**2 + (b.z - a.z)**2);
+    }
 }
 
 /**
