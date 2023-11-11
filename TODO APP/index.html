@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aka TODO</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        let localTheme = localStorage.getItem("theme");
+        if (localTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+
+    </script>
 </head>
 <body>
+    <header>
+        <h1>Дело в шляпе</h1>
+        <div class="toggle-theme"></div>
+    </header>
 
+    <main>
+        <div class="container">
+
+        </div>
+
+        <div class="container">
+
+        </div>
+    </main>
+
+    <script src="/main.js"></script>
 </body>
 </html>

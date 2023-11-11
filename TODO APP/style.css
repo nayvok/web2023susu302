@@ -10,27 +10,54 @@
 
 /* Темы */
 
-@media (prefers-color-scheme: light) {
-    :root {
-      --text: #0e082b;
-      --background: #dad4f7;
-      --primary: #d39cec;
-      --secondary: #f6d0f0;
-      --accent: #d228b6;
-      --block: #D3CDEF;
-    }
-  }
+:root{
+    --default-transition: color .3s, background .3s ease-in-out, border-color .3s ease-in-out, fill .3s ease-in-out, transform .3s ease-in-out;
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text: #dad4f7;
-      --background: #0e082b;
-      --primary: #491363;
-      --secondary: #2f0929;
-      --accent: #d72dbb;
-      --block: #161032;
-    }
-  }
+:root[data-theme="light"]{
+    --text: #0e082b;
+    --background: #dad4f7;
+    --primary: #d39cec;
+    --secondary: #f6d0f0;
+    --accent: #d228b6;
+    --block: #D3CDEF;
+    --toggle-btn: url(/assets/light.svg);
+}
 
+:root[data-theme="dark"]{
+    --text: #dad4f7;
+    --background: #0e082b;
+    --primary: #491363;
+    --secondary: #2f0929;
+    --accent: #d72dbb;
+    --block: #161032;
+    --toggle-btn: url(/assets/dark.svg);
+}
 
+body{
+    background: var(--background);
+    transition: var(--default-transition);
+    color: var(--text);
+}
 
+/* HEADER */
+
+header{
+    padding: 12px 85px;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--default-transition);
+
+}
+
+/* Кнопка переключения темы */
+
+.toggle-theme{
+    width: 32px;
+    height: 32px;
+    background: var(--toggle-btn);
+    transition: var(--default-transition);
+}
