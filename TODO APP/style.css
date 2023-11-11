@@ -1,5 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 
+/* Темы */
+
+@media (prefers-color-scheme: light) {
+    :root {
+      --text: #0e082b;
+      --background: #dad4f7;
+      --primary: #d39cec;
+      --secondary: #f6d0f0;
+      --accent: #d228b6;
+      --block: #D3CDEF;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #dad4f7;
+      --background: #0e082b;
+      --primary: #491363;
+      --secondary: #2f0929;
+      --accent: #d72dbb;
+      --block: #161032;
+    }
+  }
 
 
 
