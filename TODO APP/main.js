@@ -25,3 +25,4 @@ const closeModal = () => {
 
 document.querySelector(".create-btn").addEventListener('click', openModal);
 document.querySelector(".modal-container__close").addEventListener('click', closeModal);
+

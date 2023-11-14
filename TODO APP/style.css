@@ -92,40 +92,39 @@ main{
 .container{
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
     gap: 45px;
 }
 
 .card{
-    width: 500px;
+    width: 65%;
     display: flex;
     flex-direction: column;
 }
 
 .card__header{
     background: var(--primary);
-    padding: 10px 35px;
+    padding: 15px 35px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     border-radius: 20px 20px 0 0;
 }
 
-.card__header div{
+.card__header .card__header-right{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
 }
 
 .card__header p{
     font-size: 14px;
 }
 
-.card__menu-show{
-    width: 32px;
-    height: 32px;
-    background: url(/assets/menu.svg);
-    cursor: pointer;
-    position: relative;
+.card__header h3{
+    font-size: 20px;
 }
 
 .card__title{
@@ -134,8 +133,21 @@ main{
     border-radius: 0 0 20px 20px;
 }
 
+.card__menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 7px;
+    background: var(--secondary);
+    border-radius: 20px;
+    padding: 5px 8px;
+}
 
-
+.card__menu img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
 
 /* Модальные окна */
 
@@ -229,6 +241,10 @@ main{
     height: 240px;
     resize: none;
 }
+
+
+
+
 
 
 
