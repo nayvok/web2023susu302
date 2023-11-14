@@ -7,3 +7,21 @@ const swithTheme = () => {
 }
 
 document.querySelector(".toggle-theme").addEventListener('click', swithTheme);
+
+
+
+
+
+
+
+
+
+const openModal = () => {
+    document.querySelector(".modal-container").classList.add('modal-container_visible');
+}
+const closeModal = () => {
+    document.querySelector(".modal-container").classList.remove('modal-container_visible');
+}
+
+document.querySelector(".create-btn").addEventListener('click', openModal);
+document.querySelector(".modal-container__close").addEventListener('click', closeModal);
