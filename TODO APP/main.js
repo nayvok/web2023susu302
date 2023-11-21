@@ -2,6 +2,7 @@ const urlApi = "https://jsonplaceholder.typicode.com/";
 const container = document.getElementById("posts");
 
 
+
 // Функция смены темы
 const swithTheme = () => {
     const rootElem = document.documentElement;
@@ -21,19 +22,40 @@ const closeModal = (element) => {
     document.getElementById(element).classList.remove('modal-container_visible');
 }
 
+
+
+let users = [];
+class User {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+
 // Загрузка постов из api при запуске странички
 document.addEventListener("DOMContentLoaded", () => {
+    fetch(urlApi + 'users')
+    .then(response => response.json())
+    .then(json => {
+        for (let key in json) {
+            let user = new User(json[key].id, json[key].name)
+            users.push(user);
+        }
+    });
+
     fetch(urlApi + 'posts')
         .then(response => response.json())
         .then(json => {
-            let key;
-            for (key in json){
+            for (let key in json) {
+                const currentPost = json[key];
+                const author = users.find(user => user.id === currentPost.userId);
+
                 container.innerHTML += `
-                    <div class="card" id="${json[key].id}">
+                    <div class="card" id="${currentPost.id}">
                     <div class="card__header">
-                        <h3>${json[key].title}</h3>
+                        <h3>${currentPost.title}</h3>
                         <div class="card__header-right">
-                            <p>Ян Юшков</p>
+                            <p>${author.name}</p>
                             <div class="card__menu">
                                 <img src="/assets/edit.svg" class="edit" onclick="editCard(this)">
                                 <img src="/assets/delete.svg" class="delete" onclick="deleteCard(this)">
@@ -41,11 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                     <div class="card__description">
-                        <p>${json[key].body}</p>
+                        <p>${currentPost.body}</p>
                     </div>
                 `
             }
         });
 });
-
-
