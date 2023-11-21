@@ -109,6 +109,7 @@ main{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 40px;
     border-radius: 20px 20px 0 0;
 }
 
@@ -121,16 +122,22 @@ main{
 
 .card__header p{
     font-size: 14px;
+    width: 100%;
+    white-space: nowrap;
 }
 
 .card__header h3{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .card__description{
     background: var(--block);
     padding: 25px 35px;
     border-radius: 0 0 20px 20px;
+}
+.card__description p{
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .card__menu{

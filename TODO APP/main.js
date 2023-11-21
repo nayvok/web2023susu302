@@ -1,10 +1,10 @@
 const urlApi = "https://jsonplaceholder.typicode.com/";
 const container = document.getElementById("posts");
-
+let cardId = 0;
 
 
 // Функция смены темы
-const swithTheme = () => {
+function swithTheme() {
     const rootElem = document.documentElement;
     let dataTheme = rootElem.getAttribute("data-theme"), newTheme;
     newTheme = (dataTheme === "light") ? "dark" : "light";
@@ -23,7 +23,7 @@ const closeModal = (element) => {
 }
 
 
-
+// Массив пользователей, включающий в себя объекты User
 let users = [];
 class User {
     constructor(id, name) {
@@ -32,40 +32,96 @@ class User {
     }
 }
 
-// Загрузка постов из api при запуске странички
-document.addEventListener("DOMContentLoaded", () => {
-    fetch(urlApi + 'users')
+
+// Функция получения данных пользователей из api
+async function getUsers(){
+    let data = [];
+    await fetch(urlApi + 'users')
     .then(response => response.json())
     .then(json => {
         for (let key in json) {
             let user = new User(json[key].id, json[key].name)
-            users.push(user);
+            data.push(user);
         }
     });
+    return data;
+}
 
-    fetch(urlApi + 'posts')
-        .then(response => response.json())
-        .then(json => {
-            for (let key in json) {
-                const currentPost = json[key];
-                const author = users.find(user => user.id === currentPost.userId);
 
-                container.innerHTML += `
-                    <div class="card" id="${currentPost.id}">
-                    <div class="card__header">
-                        <h3>${currentPost.title}</h3>
-                        <div class="card__header-right">
-                            <p>${author.name}</p>
-                            <div class="card__menu">
-                                <img src="/assets/edit.svg" class="edit" onclick="editCard(this)">
-                                <img src="/assets/delete.svg" class="delete" onclick="deleteCard(this)">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card__description">
-                        <p>${currentPost.body}</p>
-                    </div>
-                `
-            }
+// Темплейт карточки
+const cardTemplate = (id, title, author, description) => {
+    return `
+        <div class="card" id="${id}">
+        <div class="card__header">
+            <h3>${title}</h3>
+            <div class="card__header-right">
+                <p>${author}</p>
+                <div class="card__menu">
+                    <img src="/assets/edit.svg" class="edit" onclick="editCard(this)">
+                    <img src="/assets/delete.svg" class="delete" onclick="deleteCard(this)">
+                </div>
+            </div>
+        </div>
+        <div class="card__description">
+            <p>${description}</p>
+        </div>
+    `
+}
+
+
+// Функция загрузки постов из api и localStorage
+async function loadPosts(){
+    await fetch(urlApi + 'posts')
+    .then(response => response.json())
+    .then(json => {
+        json.forEach(element => {
+            const author = users.find(user => user.id === element.userId);
+            cardId += 1;
+            container.innerHTML += cardTemplate(element.id, element.title, author.name, element.body)
         });
+    });
+
+    for (let i = 0; i < localStorage.length; ++i) {
+        const keyLocalStorage = localStorage.key(i);
+        if (keyLocalStorage.includes("card")) {
+            const data = JSON.parse(localStorage.getItem(keyLocalStorage))
+            cardId += 1;
+            container.innerHTML += cardTemplate(data.id, data.title, data.author, data.description)
+        };
+    }
+    console.log(cardId);
+}
+
+
+// Выполнение функий при запуске страницы
+document.addEventListener("DOMContentLoaded", async () => {
+    users = await getUsers();
+    await loadPosts();
+
 });
+
+
+// Функция создания карточки пользователем, сохранения в localStorage и вывод на страницу
+function createCard() {
+    let title = document.getElementById("title");
+    let description = document.getElementById("main");
+    let author = document.getElementById("author");
+
+    cardId += 1;
+    let data = {
+        id: cardId,
+        title: title.value,
+        description: description.value,
+        author: author.value
+    }
+
+    localStorage.setItem(`card${cardId}`, JSON.stringify(data));
+
+    container.innerHTML += cardTemplate(cardId, title.value, author.value, description.value);
+
+    title.value = '';
+    description.value = '';
+    author.value = '';
+    closeModal('createModel');
+};
+

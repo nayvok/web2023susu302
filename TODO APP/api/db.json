@@ -1,7 +1,0 @@
-{
-  "posts": [
-    { "id": 1, "title": "Firt item", "description": "Описание", "author": "Ян Юшков" },
-    { "id": 2, "title": "Second item", "description": "Описание", "author": "Ян Юшков" }
-  ],
-  "creatorInfo": { "name": "Вася Пупкин", "group": "КЭ-302", "repo": "...." }
-}
