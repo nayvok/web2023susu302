@@ -1,6 +1,6 @@
 const urlApi = "https://jsonplaceholder.typicode.com/";
 const container = document.getElementById("posts");
-let cardId = 0;
+
 
 
 // Функция смены темы
@@ -69,6 +69,15 @@ const cardTemplate = (id, title, author, description) => {
 }
 
 
+// Функция проверки cardId
+let cardId = 0;
+function checkCardId(num) {
+    if (cardId < num){
+        cardId = num
+    }
+}
+
+
 // Функция загрузки постов из api и localStorage
 async function loadPosts(){
     await fetch(urlApi + 'posts')
@@ -76,7 +85,7 @@ async function loadPosts(){
     .then(json => {
         json.forEach(element => {
             const author = users.find(user => user.id === element.userId);
-            cardId += 1;
+            checkCardId(element.id);
             container.innerHTML += cardTemplate(element.id, element.title, author.name, element.body)
         });
     });
@@ -85,11 +94,10 @@ async function loadPosts(){
         const keyLocalStorage = localStorage.key(i);
         if (keyLocalStorage.includes("card")) {
             const data = JSON.parse(localStorage.getItem(keyLocalStorage))
-            cardId += 1;
+            checkCardId(data.id);
             container.innerHTML += cardTemplate(data.id, data.title, data.author, data.description)
         };
     }
-    console.log(cardId);
 }
 
 
@@ -125,3 +133,25 @@ function createCard() {
     closeModal('createModel');
 };
 
+
+// Функция удаления поста
+function deleteCard(element) {
+    const parent = element.closest(".card");
+    parent.remove();
+    localStorage.removeItem(`card${parent.id}`);
+};
+
+
+function editCard(element) {
+    const parent = element.closest(".card");
+    let title = parent.querySelector("h3").textContent;
+    let main = parent.querySelector(".card__description").querySelector("p").textContent;
+
+    const modal = document.getElementById("editModel");
+    modal.querySelector("#title").value = title;
+    modal.querySelector("#main").value = title;
+
+    openModal("editModel");
+
+
+};
