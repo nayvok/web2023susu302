@@ -142,16 +142,35 @@ function deleteCard(element) {
 };
 
 
+// Функция обновления данных в localStorage
+function updateLocalStorage(cardKey, titleValue, descriptionValue){
+    const data = localStorage.getItem(`card${cardKey}`);
+    if (data) {
+        const parseData = JSON.parse(data);
+        parseData.title = titleValue;
+        parseData.description = descriptionValue;
+        localStorage.setItem(`card${cardKey}`, JSON.stringify(parseData));
+    }
+
+};
+
+
+// Функция редактирования карточки
 function editCard(element) {
     const parent = element.closest(".card");
-    let title = parent.querySelector("h3").textContent;
-    let main = parent.querySelector(".card__description").querySelector("p").textContent;
+    const title = parent.querySelector("h3");
+    const main = parent.querySelector(".card__description").querySelector("p");
 
     const modal = document.getElementById("editModel");
-    modal.querySelector("#title").value = title;
-    modal.querySelector("#main").value = title;
+    modal.querySelector("#title").value = title.textContent;
+    modal.querySelector("#main").value = main.textContent;
 
     openModal("editModel");
 
-
+    modal.querySelector(".form-button").addEventListener('click', () => {
+        updateLocalStorage(parent.id, modal.querySelector("#title").value, modal.querySelector("#main").value);
+        title.textContent = modal.querySelector("#title").value;
+        main.textContent = modal.querySelector("#main").value;
+        closeModal("editModel");
+    });
 };
