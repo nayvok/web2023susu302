@@ -106,8 +106,9 @@ async function loadPosts(){
         const keyLocalStorage = localStorage.key(i);
         if (keyLocalStorage.includes("card")) {
             const data = JSON.parse(localStorage.getItem(keyLocalStorage))
+            const author = users.find(user => user.id === Number(data.author));
             checkCardId(data.id);
-            container.innerHTML += cardTemplate(data.id, data.title, data.author, data.description)
+            container.innerHTML += cardTemplate(data.id, data.title, author.name, data.description)
         };
     }
     preloader("end");
@@ -136,14 +137,24 @@ function createCard() {
         author: author.value
     }
 
-    localStorage.setItem(`card${cardId}`, JSON.stringify(data));
+    if (author.value < 1 || author.value > 10 || author.value == null || author.value == "") {
+        alert("Введите номер пользователя от 1 до 10");
+    } else if (title.value == null || title.value == "") {
+        alert("Введите заголовок");
+    } else if (description.value == null || description.value == "") {
+        alert("Введите основной текст");
+    } else{
+        const authorId = users.find(user => user.id === Number(author.value));
+        localStorage.setItem(`card${cardId}`, JSON.stringify(data));
 
-    container.innerHTML += cardTemplate(cardId, title.value, author.value, description.value);
+        container.innerHTML += cardTemplate(cardId, title.value, authorId.name, description.value);
 
-    title.value = '';
-    description.value = '';
-    author.value = '';
-    closeModal('createModel');
+        title.value = '';
+        description.value = '';
+        author.value = '';
+        closeModal('createModel');
+    }
+
 };
 
 
