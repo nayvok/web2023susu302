@@ -22,6 +22,16 @@ const closeModal = (element) => {
     document.getElementById(element).classList.remove('modal-container_visible');
 }
 
+const preloader = (value) => {
+    if (value == "start"){
+        document.getElementById("loader").classList.add('container_loader-visible')
+        document.querySelector("body").style.overflow = "hidden";
+    } if (value == "end"){
+        document.getElementById("loader").classList.remove('container_loader-visible')
+        document.querySelector("body").style.overflow = "visible";
+    }
+}
+
 
 // Массив пользователей, включающий в себя объекты User
 let users = [];
@@ -78,8 +88,10 @@ function checkCardId(num) {
 }
 
 
+
 // Функция загрузки постов из api и localStorage
 async function loadPosts(){
+    preloader("start");
     await fetch(urlApi + 'posts')
     .then(response => response.json())
     .then(json => {
@@ -98,6 +110,7 @@ async function loadPosts(){
             container.innerHTML += cardTemplate(data.id, data.title, data.author, data.description)
         };
     }
+    preloader("end");
 }
 
 
