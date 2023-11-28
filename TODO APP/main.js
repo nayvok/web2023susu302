@@ -1,10 +1,10 @@
 const urlApi = "https://jsonplaceholder.typicode.com/";
 const container = document.getElementById("posts");
-
+const selectAuthor = document.getElementById("select-author");
 
 
 // Функция смены темы
-function swithTheme() {
+function switchTheme() {
     const rootElem = document.documentElement;
     let dataTheme = rootElem.getAttribute("data-theme"), newTheme;
     newTheme = (dataTheme === "light") ? "dark" : "light";
@@ -23,10 +23,10 @@ const closeModal = (element) => {
 }
 
 const preloader = (value) => {
-    if (value == "start"){
+    if (value === "start"){
         document.getElementById("loader").classList.add('container_loader-visible')
         document.querySelector("body").style.overflow = "hidden";
-    } if (value == "end"){
+    } if (value === "end"){
         document.getElementById("loader").classList.remove('container_loader-visible')
         document.querySelector("body").style.overflow = "visible";
     }
@@ -67,8 +67,8 @@ const cardTemplate = (id, title, author, description) => {
             <div class="card__header-right">
                 <p>${author}</p>
                 <div class="card__menu">
-                    <img src="/assets/edit.svg" class="edit" onclick="editCard(this)">
-                    <img src="/assets/delete.svg" class="delete" onclick="deleteCard(this)">
+                    <img src="/assets/edit.svg" class="edit" onclick="editCard(this)" alt="Редактировать">
+                    <img src="/assets/delete.svg" class="delete" onclick="deleteCard(this)" alt="Удалить">
                 </div>
             </div>
         </div>
@@ -88,7 +88,6 @@ function checkCardId(num) {
 }
 
 
-
 // Функция загрузки постов из api и localStorage
 async function loadPosts(){
     preloader("start");
@@ -99,6 +98,7 @@ async function loadPosts(){
             const author = users.find(user => user.id === element.userId);
             checkCardId(element.id);
             container.innerHTML += cardTemplate(element.id, element.title, author.name, element.body)
+
         });
     });
 
@@ -109,8 +109,14 @@ async function loadPosts(){
             const author = users.find(user => user.id === Number(data.author));
             checkCardId(data.id);
             container.innerHTML += cardTemplate(data.id, data.title, author.name, data.description)
-        };
+        }
     }
+
+    for (let i = 0; i < users.length; ++i) {
+        console.log(users[i].name);
+        selectAuthor.innerHTML += `<option value="${users[i].id}">${users[i].name}</option>`
+    }
+
     preloader("end");
 }
 
@@ -127,7 +133,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 function createCard() {
     let title = document.getElementById("title");
     let description = document.getElementById("main");
-    let author = document.getElementById("author");
+    let author = document.getElementById("select-author");
 
     cardId += 1;
     let data = {
@@ -137,25 +143,15 @@ function createCard() {
         author: author.value
     }
 
-    if (author.value < 1 || author.value > 10 || author.value == null || author.value == "") {
-        alert("Введите номер пользователя от 1 до 10");
-    } else if (title.value == null || title.value == "") {
-        alert("Введите заголовок");
-    } else if (description.value == null || description.value == "") {
-        alert("Введите основной текст");
-    } else{
-        const authorId = users.find(user => user.id === Number(author.value));
-        localStorage.setItem(`card${cardId}`, JSON.stringify(data));
+    const authorId = users.find(user => user.id === Number(author.value));
+    localStorage.setItem(`card${cardId}`, JSON.stringify(data));
 
-        container.innerHTML += cardTemplate(cardId, title.value, authorId.name, description.value);
+    container.innerHTML += cardTemplate(cardId, title.value, authorId.name, description.value);
 
-        title.value = '';
-        description.value = '';
-        author.value = '';
-        closeModal('createModel');
-    }
-
-};
+    title.value = '';
+    description.value = '';
+    closeModal('createModel');
+}
 
 
 // Функция удаления поста
@@ -163,7 +159,7 @@ function deleteCard(element) {
     const parent = element.closest(".card");
     parent.remove();
     localStorage.removeItem(`card${parent.id}`);
-};
+}
 
 
 // Функция обновления данных в localStorage
@@ -175,8 +171,7 @@ function updateLocalStorage(cardKey, titleValue, descriptionValue){
         parseData.description = descriptionValue;
         localStorage.setItem(`card${cardKey}`, JSON.stringify(parseData));
     }
-
-};
+}
 
 
 // Функция редактирования карточки
@@ -197,4 +192,4 @@ function editCard(element) {
         main.textContent = modal.querySelector("#main").value;
         closeModal("editModel");
     });
-};
+}

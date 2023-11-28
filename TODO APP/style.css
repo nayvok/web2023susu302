@@ -21,7 +21,7 @@
     --secondary: #f6d0f0;
     --accent: #d228b6;
     --block: #D3CDEF;
-    --toggle-btn: url(/assets/light.svg);
+    --toggle-btn: url("./assets/light.svg");
 }
 
 :root[data-theme="dark"]{
@@ -31,7 +31,7 @@
     --secondary: #2f0929;
     --accent: #d72dbb;
     --block: #161032;
-    --toggle-btn: url(/assets/dark.svg);
+    --toggle-btn: url("./assets/dark.svg");
 }
 
 body{
@@ -53,7 +53,7 @@ header{
     align-items: center;
     transition: var(--default-transition);
     z-index: 99;
-    box-shadow: insert 0px 2px 10px black;
+    box-shadow: 0 .5px 5px rgba(0, 0, 0, .5);
 }
 
 .header__menu{
@@ -268,7 +268,7 @@ main{
     gap: 10px;
 }
 
-.input-box input, textarea{
+.input-box input, textarea, select{
     border-radius: 20px;
     background: var(--secondary);
     border: none;
@@ -276,6 +276,7 @@ main{
     outline: none;
     color: var(--text);
     font-size: 14px;
+    appearance: none;
 }
 
 .input-box input::placeholder, .input-box textarea::placeholder{
@@ -284,12 +285,12 @@ main{
 }
 
 .input-box textarea::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
 }
 
-.input-box h3{
-    margin-left: 15px;
+.input-box label{
+    margin-left: 20px;
 }
 
 
@@ -299,9 +300,24 @@ main{
     resize: none;
 }
 
+.input-box select{
+    cursor: pointer;
+    width: 100%;
+}
 
+.input-box .select-wrapper{
+    position: relative;
+}
 
-
-
-
-
+.input-box .select-wrapper::after{
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 10px 7px 0 7px;
+    border-color: #d72dbb transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    right: 20px;
+    cursor: pointer;
+}
