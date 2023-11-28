@@ -1,7 +1,7 @@
 const urlApi = "https://jsonplaceholder.typicode.com/";
 const container = document.getElementById("posts");
 const selectAuthor = document.getElementById("select-author");
-
+const postsImportant = document.getElementById("posts-important");
 
 // Функция смены темы
 function switchTheme() {
@@ -59,15 +59,22 @@ async function getUsers(){
 
 
 // Темплейт карточки
-const cardTemplate = (id, title, author, description) => {
+const cardTemplate = (id, title, author, description, important) => {
+    let bookmark = '';
+    let bookmarkStyle = 'style="border: solid 2px #d72dbb; border-radius: 20px;"';
+    if (important !== 'important'){
+        bookmark = '<img src="/assets/bookmark.svg" class="bookmark" onclick="importantCard(this)" alt="Добавить в важоне"></img>';
+        bookmarkStyle = '';
+    }
     return `
-        <div class="card" id="${id}">
+        <div class="card" id="${id}" ${bookmarkStyle}>
         <div class="card__header">
             <h3>${title}</h3>
             <div class="card__header-right">
                 <p>${author}</p>
                 <div class="card__menu">
                     <img src="/assets/edit.svg" class="edit" onclick="editCard(this)" alt="Редактировать">
+                    ${bookmark}
                     <img src="/assets/delete.svg" class="delete" onclick="deleteCard(this)" alt="Удалить">
                 </div>
             </div>
@@ -90,15 +97,29 @@ function checkCardId(num) {
 
 // Функция загрузки постов из api и localStorage
 async function loadPosts(){
+    container.innerHTML = '';
+    postsImportant.innerHTML = '';
     preloader("start");
+    let importantCard = [];
+    for (let i = 0; i < localStorage.length; ++i){
+        const keyLocalStorage = localStorage.key(i);
+        if (keyLocalStorage.includes("important")) {
+            importantCard.push(Number(localStorage.getItem(keyLocalStorage)));
+            console.log(importantCard);
+        }
+    }
+
     await fetch(urlApi + 'posts')
     .then(response => response.json())
     .then(json => {
         json.forEach(element => {
             const author = users.find(user => user.id === element.userId);
             checkCardId(element.id);
-            container.innerHTML += cardTemplate(element.id, element.title, author.name, element.body)
-
+            if (importantCard.includes(element.id)){
+                postsImportant.innerHTML += cardTemplate(element.id, element.title, author.name, element.body, "important")
+            } else{
+                container.innerHTML += cardTemplate(element.id, element.title, author.name, element.body)
+            }
         });
     });
 
@@ -108,12 +129,16 @@ async function loadPosts(){
             const data = JSON.parse(localStorage.getItem(keyLocalStorage))
             const author = users.find(user => user.id === Number(data.author));
             checkCardId(data.id);
-            container.innerHTML += cardTemplate(data.id, data.title, author.name, data.description)
+            if (importantCard.includes(data.id)){
+                postsImportant.innerHTML += cardTemplate(data.id, data.title, author.name, data.description, "important")
+            } else{
+                container.innerHTML += cardTemplate(data.id, data.title, author.name, data.description)
+            }
+
         }
     }
 
     for (let i = 0; i < users.length; ++i) {
-        console.log(users[i].name);
         selectAuthor.innerHTML += `<option value="${users[i].id}">${users[i].name}</option>`
     }
 
@@ -155,10 +180,17 @@ function createCard() {
 
 
 // Функция удаления поста
-function deleteCard(element) {
+async function deleteCard(element) {
     const parent = element.closest(".card");
     parent.remove();
-    localStorage.removeItem(`card${parent.id}`);
+    for (let i = 0; i < localStorage.length; ++i){
+        const keyLocalStorage = localStorage.key(i);
+        if (keyLocalStorage.includes(parent.id)){
+            localStorage.removeItem(keyLocalStorage);
+        }
+    }
+    await loadPosts();
+
 }
 
 
@@ -192,4 +224,12 @@ function editCard(element) {
         main.textContent = modal.querySelector("#main").value;
         closeModal("editModel");
     });
+}
+
+async function importantCard(element){
+    const parent = element.closest(".card");
+    localStorage.setItem(`${parent.id}important`, parent.id);
+    parent.id += 'important';
+    await loadPosts();
+
 }

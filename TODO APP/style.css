@@ -86,6 +86,8 @@ main{
     padding: 120px 180px 35px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    gap: 45px;
     transition: var(--default-transition);
 }
 
@@ -95,6 +97,10 @@ main{
     align-items: center;
     gap: 45px;
     position: relative;
+}
+
+.container_important{
+    flex-direction: column;
 }
 
 .container_loader{
