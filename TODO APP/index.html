@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aka TODO</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./media.css">
+    <script>
+        let localTheme = localStorage.getItem("theme"), themeToSet = localTheme;
+        if (!localTheme){
+            themeToSet = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", themeToSet);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Дело в шляпе</h1>
+        <div class="header__menu">
+            <span class="create-btn" onclick="openModal('createModel')">Создать</span>
+            <span class="toggle-theme" onclick="switchTheme()"></span>
+        </div>
+    </header>
+
+    <div class="modal-container" id="createModel">
+        <span class="modal-container__close" onclick="closeModal('createModel')"></span>
+        <div class="form-container">
+            <form action="">
+                <div class="input-box">
+                    <label for="title">Заголовок</label>
+                    <input type="text" placeholder="Введите название заголовка" id="title">
+                </div>
+                <div class="input-box">
+                    <label for="main">Основной текст</label>
+                    <textarea name="" id="main" placeholder="Введите основной текст"></textarea>
+                </div>
+                <div class="input-box">
+                    <label for="author">Автор</label>
+                    <div class="select-wrapper">
+                        <select id="select-author"></select>
+                    </div>
+                </div>
+            </form>
+            <span class="form-button" onclick="createCard()">Опубликовать</span>
+        </div>
+    </div>
+    <div class="modal-container" id="editModel">
+        <span class="modal-container__close" onclick="closeModal('editModel')"></span>
+        <div class="form-container">
+            <form action="">
+                <div class="input-box">
+                    <label for="title">Заголовок</label>
+                    <input type="text" id="title">
+                </div>
+                <div class="input-box">
+                    <label for="main">Основной текст</label>
+                    <textarea name="" id="main"></textarea>
+                </div>
+            </form>
+            <span class="form-button">Изменить</span>
+        </div>
+    </div>
+
+    <div class="container container_loader" id="loader">
+        <span class="loader"></span>
+    </div>
+
+    <main>
+        <div class="container container_important" id="posts-important"></div>
+        <div class="container" id="posts">
+
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>
