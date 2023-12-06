@@ -85,7 +85,7 @@ header {
 /* Главная */
 
 main {
-  padding: 120px 180px 35px;
+  padding: 120px 85px 35px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -130,27 +130,28 @@ main {
   width: 50px;
   height: 50px;
   animation-delay: 0.1s;
+  transform: (-50%, -50%);
   animation: spin 2s infinite;
 }
 
 @keyframes spin {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-    -webkit-transform: translate(-50%, -50%) rotate(0deg);
-    -moz-transform: translate(-50%, -50%) rotate(0deg);
-    -o-transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
   }
 
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-    -moz-transform: translate(-50%, -50%) rotate(360deg);
-    -o-transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
   }
 }
 
 .card {
-  width: 650px;
+  width: 40%;
   display: flex;
   flex-direction: column;
 }
@@ -232,11 +233,11 @@ main {
   position: absolute;
   width: 42px;
   height: 42px;
-  background: no-repeat url(/assets/close.svg);
+  background: no-repeat url(./assets/close.svg);
   background-size: 42px;
   top: 0;
   right: 0;
-  margin: 60px 60px;
+  margin: 30px 30px;
   cursor: pointer;
 }
 

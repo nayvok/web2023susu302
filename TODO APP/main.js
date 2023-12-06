@@ -65,7 +65,7 @@ const cardTemplate = (id, title, author, description, important) => {
   let bookmarkStyle = 'style="border: solid 2px #d72dbb; border-radius: 20px;"';
   if (important !== "important") {
     bookmark =
-      '<img src="/assets/bookmark.svg" class="bookmark" onclick="importantCard(this)" alt="Добавить в важоне"></img>';
+      '<img src="./assets/bookmark.svg" class="bookmark" onclick="importantCard(this)" alt="Добавить в важоне"></img>';
     bookmarkStyle = "";
   }
   return `
@@ -75,9 +75,9 @@ const cardTemplate = (id, title, author, description, important) => {
             <div class="card__header-right">
                 <p>${author}</p>
                 <div class="card__menu">
-                    <img src="/assets/edit.svg" class="edit" onclick="editCard(this)" alt="Редактировать">
+                    <img src="./assets/edit.svg" class="edit" onclick="editCard(this)" alt="Редактировать">
                     ${bookmark}
-                    <img src="/assets/delete.svg" class="delete" onclick="deleteCard(this)" alt="Удалить">
+                    <img src="./assets/delete.svg" class="delete" onclick="deleteCard(this)" alt="Удалить">
                 </div>
             </div>
         </div>

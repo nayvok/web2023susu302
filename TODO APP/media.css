@@ -1,0 +1,95 @@
+@media screen and (max-width: 1555px) {
+    .card {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .card {
+        width: 70%;
+    }
+}
+
+
+@media screen and (max-width: 960px) {
+    .card {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .card {
+        width: 90%;
+    }
+
+    main{
+        padding: 120px 45px 35px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .card {
+        width: 100%;
+    }
+
+    header{
+        padding: 12px 45px;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    .card {
+        width: 100%;
+    }
+
+    header{
+        padding: 12px 25px;
+    }
+
+    main{
+        padding: 120px 25px 35px;
+    }
+
+    .card__header, .card__description{
+        padding: 15px 15px;
+        gap: 15px;
+    }
+
+    .card__header h3 {
+        font-size: 14px;
+    }
+
+    .card__header p, .card__description p{
+        font-size: 12px;
+    }
+
+    .header__menu{
+        gap: 14px;
+    }
+
+}
+
+
+@media screen and (max-width: 375px) {
+    .card {
+        width: 100%;
+    }
+
+    .card__header, .card__description{
+        padding: 15px 15px;
+    }
+
+    main{
+        padding: 120px 5px 35px;
+    }
+
+    header{
+        padding: 12px 5px;
+
+    }
+
+    .header__menu{
+        gap: 15px;
+    }
+}
