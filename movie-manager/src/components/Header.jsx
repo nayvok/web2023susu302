@@ -3,7 +3,7 @@ import {AppBar, Toolbar, Typography} from "@mui/material";
 
 const Header = () => {
     return (
-        <AppBar component="div">
+        <AppBar component="div" position="static">
             <Toolbar sx={{alignItems: "center"}}>
                 <Typography
                     variant="h6"
