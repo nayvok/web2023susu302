@@ -10,11 +10,11 @@ const MovieItem = (props) => {
                     <CardMedia
                         component="img"
                         sx={{height: 300, width: 200, objectFit: "cover", objectPosition: "50% 50%"}}
-                        image={props.post.posterUrl}
+                        image={props.movie.posterUrl}
                     />
                     <CardContent>
                         <Typography variant="h6">
-                            {props.post.title}
+                            {props.movie.title}
                         </Typography>
                         <Stack
                             direction="row"
@@ -22,10 +22,10 @@ const MovieItem = (props) => {
                             spacing={2}
                         >
                             <Typography variant="subtitle1" color="text.secondary">
-                                {props.post.year}
+                                {props.movie.year}
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary">
-                                {props.post.genres}
+                                {props.movie.genres}
                             </Typography>
                         </Stack>
                     </CardContent>
