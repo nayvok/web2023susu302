@@ -5,7 +5,7 @@ import React from "react";
 const MovieFilter = ({filter, setFilter}) => {
 
     return (
-        <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Stack direction={{xs: "column", md: "row"}} spacing={2} justifyContent="space-between">
             <TextField
                 value={filter.query}
                 onChange={e => setFilter({...filter, query: e.target.value})}
@@ -22,7 +22,6 @@ const MovieFilter = ({filter, setFilter}) => {
                     <MenuItem value="" disabled>Сортировка</MenuItem>
                     <MenuItem key="year" value="year">По дате</MenuItem>
                     <MenuItem key="title" value="title">По названию</MenuItem>
-                    <MenuItem key="genres" value="genres">По жанру</MenuItem>
                 </Select>
             </FormControl>
         </Stack>
