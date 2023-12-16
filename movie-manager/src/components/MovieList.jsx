@@ -14,7 +14,7 @@ const MovieList = ({movies, remove, isMoviesLoading}) => {
         return (
             <Typography
                 variant={"h5"}
-                sx={{textAlign: "center"}}
+                sx={{textAlign: "center", paddingTop: 3}}
             >
                 Фильмы не найдены!
             </Typography>

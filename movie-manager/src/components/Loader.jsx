@@ -3,7 +3,7 @@ import React from "react";
 
 const Loader = () => {
     return (
-        <Box sx={{display:"flex", justifyContent: 'center', marginTop: 30}}>
+        <Box sx={{display:"flex", justifyContent: 'center', paddingTop: 10}}>
             <CircularProgress size={60}/>
         </Box>
     );

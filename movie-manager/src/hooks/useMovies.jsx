@@ -11,11 +11,11 @@ export const useSortedMovies = (movies, sort) => {
     return sortedMovies;
 }
 
-export const useMovies = (movies, sort, query) => {
+export const useMovies = (movies, sort, query, limit, page) => {
     const sortedMovies = useSortedMovies(movies, sort)
 
     const sortedAndSearchedMovies = useMemo(() => {
-        return sortedMovies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()))
+        return sortedMovies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase())).slice(limit*(page-1), limit*page)
     }, [query, sortedMovies])
 
     return sortedAndSearchedMovies;
