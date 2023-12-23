@@ -83,21 +83,6 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA4ODQ3ODkzNV5BMl5BanBnXkFtZTYwOTc4NDI3._V1_SX300.jpg"
     },
     {
-      "id": 10,
-      "title": "Stardust",
-      "year": "2007",
-      "runtime": "127",
-      "genres": [
-        "Adventure",
-        "Family",
-        "Fantasy"
-      ],
-      "director": "Matthew Vaughn",
-      "actors": "Ian McKellen, Bimbo Hart, Alastair MacIntosh, David Kelly",
-      "plot": "In a countryside town bordering on a magical land, a young man makes a promise to his beloved that he'll retrieve a fallen star by venturing into the magical realm.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjkyMTE1OTYwNF5BMl5BanBnXkFtZTcwMDIxODYzMw@@._V1_SX300.jpg"
-    },
-    {
       "id": 11,
       "title": "Apocalypto",
       "year": "2006",
@@ -214,21 +199,6 @@
       "actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
       "plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg"
-    },
-    {
-      "id": 24,
-      "title": "Chasing Amy",
-      "year": "1997",
-      "runtime": "113",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Romance"
-      ],
-      "director": "Kevin Smith",
-      "actors": "Ethan Suplee, Ben Affleck, Scott Mosier, Jason Lee",
-      "plot": "Holden and Banky are comic book artists. Everything's going good for them until they meet Alyssa, also a comic book artist. Holden falls for her, but his hopes are crushed when he finds out she's gay.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BZDM3MTg2MGUtZDM0MC00NzMwLWE5NjItOWFjNjA2M2I4YzgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
     },
     {
       "id": 26,
@@ -400,32 +370,6 @@
       "actors": "Nadine Velazquez, Denzel Washington, Carter Cabassa, Adam C. Edwards",
       "plot": "An airline pilot saves almost all his passengers on his malfunctioning airliner which eventually crashed, but an investigation into the accident reveals something troubling.",
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUxMjI1OTMxNl5BMl5BanBnXkFtZTcwNjc3NTY1OA@@._V1_SX300.jpg"
-    },
-    {
-      "id": 47,
-      "title": "One Flew Over the Cuckoo's Nest",
-      "year": "1975",
-      "runtime": "133",
-      "genres": [
-        "Drama"
-      ],
-      "director": "Milos Forman",
-      "actors": "Michael Berryman, Peter Brocco, Dean R. Brooks, Alonzo Brown",
-      "plot": "A criminal pleads insanity after getting into trouble again and once in the mental institution rebels against the oppressive nurse and rallies up the scared patients.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BYmJkODkwOTItZThjZC00MTE0LWIxNzQtYTM3MmQwMGI1OWFiXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
-    },
-    {
-      "id": 48,
-      "title": "Requiem for a Dream",
-      "year": "2000",
-      "runtime": "102",
-      "genres": [
-        "Drama"
-      ],
-      "director": "Darren Aronofsky",
-      "actors": "Ellen Burstyn, Jared Leto, Jennifer Connelly, Marlon Wayans",
-      "plot": "The drug-induced utopias of four Coney Island people are shattered when their addictions run deep.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkzODMzODYwOF5BMl5BanBnXkFtZTcwODM2NjA2NQ@@._V1_SX300.jpg"
     },
     {
       "id": 49,
@@ -1096,21 +1040,6 @@
       "actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
       "plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg"
-    },
-    {
-      "id": 117,
-      "title": "Big Nothing",
-      "year": "2006",
-      "runtime": "86",
-      "genres": [
-        "Comedy",
-        "Crime",
-        "Thriller"
-      ],
-      "director": "Jean-Baptiste Andrea",
-      "actors": "David Schwimmer, Simon Pegg, Alice Eve, Natascha McElhone",
-      "plot": "A frustrated, unemployed teacher joining forces with a scammer and his girlfriend in a blackmailing scheme.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY5NTc2NjYwOV5BMl5BanBnXkFtZTcwMzk5OTY0MQ@@._V1_SX300.jpg"
     },
     {
       "id": 118,

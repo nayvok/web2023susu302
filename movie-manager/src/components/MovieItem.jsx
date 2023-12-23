@@ -6,11 +6,14 @@ import {
     Stack,
     Typography
 } from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 const MovieItem = (props) => {
+    const router = useNavigate();
+
     return (
         <Grid item xs={6} sm={4} md={3} lg={2.4} sx={{justifyContent:"center", display: "flex"}}>
-            <Card sx={{width: {xs: "180px"}}}>
+            <Card sx={{width: {xs: "180px"}}} onClick={() => router(`/movies/${props.movie.id}`)}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
@@ -28,9 +31,6 @@ const MovieItem = (props) => {
                             <Typography variant="subtitle1" color="text.secondary">
                                 {props.movie.year}
                             </Typography>
-                            {/*<Typography variant="subtitle1" color="text.secondary">*/}
-                            {/*    {props.movie.genres.join(', ')}*/}
-                            {/*</Typography>*/}
                         </Stack>
                     </CardContent>
                 </CardActionArea>
