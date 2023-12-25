@@ -40,7 +40,6 @@ const EditAndCreateDialog = ({openDialog, handleClose, setInputs, editMovie, mov
             <DialogContent>
                 <Stack>
                     <TextField
-                        autoFocus
                         margin="normal"
                         id="title"
                         label="Название"
@@ -50,7 +49,6 @@ const EditAndCreateDialog = ({openDialog, handleClose, setInputs, editMovie, mov
                         onChange={e => setInputs({...inputs, title: e.target.value})}
                     />
                     <TextField
-                        autoFocus
                         margin="normal"
                         id="year"
                         label="Год выпуска"
@@ -60,7 +58,15 @@ const EditAndCreateDialog = ({openDialog, handleClose, setInputs, editMovie, mov
                         onChange={e => setInputs({...inputs, year: e.target.value})}
                     />
                     <TextField
-                        autoFocus
+                        margin="normal"
+                        id="runtime"
+                        label="Время в минутах"
+                        type="Number"
+                        fullWidth
+                        defaultValue={movie.runtime}
+                        onChange={e => setInputs({...inputs, runtime: e.target.value})}
+                    />
+                    <TextField
                         margin="normal"
                         id="director"
                         label="Режиссер"
@@ -70,7 +76,6 @@ const EditAndCreateDialog = ({openDialog, handleClose, setInputs, editMovie, mov
                         onChange={e => setInputs({...inputs, director: e.target.value})}
                     />
                     <TextField
-                        autoFocus
                         margin="normal"
                         id="actors"
                         label="Укажите список актеров (через запятую)"
@@ -80,7 +85,6 @@ const EditAndCreateDialog = ({openDialog, handleClose, setInputs, editMovie, mov
                         onChange={e => setInputs({...inputs, actors: e.target.value})}
                     />
                     <TextField
-                        autoFocus
                         margin="normal"
                         id="genres"
                         label="Укажите жанры (через запятую)"
@@ -90,7 +94,6 @@ const EditAndCreateDialog = ({openDialog, handleClose, setInputs, editMovie, mov
                         onChange={e => setInputs({...inputs, genres: e.target.value.split(",")})}
                     />
                     <TextField
-                        autoFocus
                         margin="normal"
                         id="plot"
                         label="Описание"
@@ -102,7 +105,6 @@ const EditAndCreateDialog = ({openDialog, handleClose, setInputs, editMovie, mov
                         onChange={e => setInputs({...inputs, plot: e.target.value})}
                     />
                     <TextField
-                        autoFocus
                         margin="normal"
                         id="posterUrl"
                         label="Укажите ссылку на обложку"

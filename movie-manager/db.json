@@ -216,20 +216,6 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQyMDA5MzkyOF5BMl5BanBnXkFtZTgwOTYwNTcxMTE@._V1_SX300.jpg"
     },
     {
-      "id": 30,
-      "title": "Pulp Fiction",
-      "year": "1994",
-      "runtime": "154",
-      "genres": [
-        "Crime",
-        "Drama"
-      ],
-      "director": "Quentin Tarantino",
-      "actors": "Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta",
-      "plot": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SX300.jpg"
-    },
-    {
       "id": 31,
       "title": "Lock, Stock and Two Smoking Barrels",
       "year": "1998",
@@ -968,20 +954,6 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_SX300.jpg"
     },
     {
-      "id": 114,
-      "title": "12 Angry Men",
-      "year": "1957",
-      "runtime": "96",
-      "genres": [
-        "Crime",
-        "Drama"
-      ],
-      "director": "Sidney Lumet",
-      "actors": "Martin Balsam, John Fiedler, Lee J. Cobb, E.G. Marshall",
-      "plot": "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BODQwOTc5MDM2N15BMl5BanBnXkFtZTcwODQxNTEzNA@@._V1_SX300.jpg"
-    },
-    {
       "id": 115,
       "title": "The Imitation Game",
       "year": "2014",
@@ -1321,6 +1293,36 @@
       "actors": "Jack Nicholson, Faye Dunaway",
       "plot": "Когда в городке Дерри штата Мэн начинают пропадать дети, несколько ребят сталкиваются со своими величайшими страхами — не только с группой школьных хулиганов, но со злобным клоуном Пеннивайзом, список жертв которого уходит вглубь веков.",
       "posterUrl": "https://avatars.dzeninfra.ru/get-zen_doc/1546191/pub_5cd156526f616900b2129de4_5cd161f6220cec00af74b847/scale_1200"
+    },
+    {
+      "id": 1703468153282,
+      "title": "Оппенгеймер",
+      "year": "2023",
+      "runtime": "180",
+      "director": "Кристофер Нолан",
+      "actors": "Киллиан Мёрфи, Роберт Дауни мл., Эмили Блант и др.",
+      "plot": "История жизни американского физика-теоретика Роберта Оппенгеймера, который во времена Второй мировой войны руководил Манхэттенским проектом — секретными разработками ядерного оружия.",
+      "genres": [
+        "история",
+        " драма",
+        " биография"
+      ],
+      "posterUrl": "https://www.kino-teatr.ru/movie/poster/154859/127109.jpg"
+    },
+    {
+      "id": 1703468652237,
+      "title": "Барби",
+      "year": "2023",
+      "runtime": "114",
+      "director": "Грета Гервиг",
+      "actors": "Марго Робби, Райан Гослинг, Америка Феррера и др.",
+      "plot": "Самая обыкновенная стереотипная Барби живёт в великолепном розовом Барбиленде, и каждый её день идеален. Она меняет наряды, загорает на пляже, проводит время с другими Барби, день заканчивается шумной вечеринкой с танцами, и в этой позитивной кутерьме с блёстками влюблённый Кен — всего лишь приложение к Барби. Однажды куклу посещают мысли о смерти, и её сделанные под туфли с каблуками ноги вдруг становятся плоскими. Чтобы разобраться в происходящем и вернуть привычный пластмассовый мир, Барби придётся отправиться в мир реальный и найти там свою девочку-хозяйку. За ней увязывается не мыслящий жизни без своего кумира Кен.",
+      "genres": [
+        "Комедия",
+        "Приключения",
+        "Фэнтези"
+      ],
+      "posterUrl": "https://s5.afisha.ru/mediastorage/6f/8f/5b3b119eddff488fa0bbe2868f6f.jpg"
     }
   ]
 }

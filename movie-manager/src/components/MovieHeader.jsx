@@ -1,7 +1,7 @@
 import {Box, IconButton, Stack, Typography} from "@mui/material";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy.js";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined.js";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined.js";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import React from "react";
 
 const MovieHeader = ({movie, handleClickOpenEdit, handleClickOpenDelete}) => {

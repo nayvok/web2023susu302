@@ -25,6 +25,7 @@ const MovieDetails = () => {
     const [inputs, setInputs] = useState({
         title: "",
         year: 0,
+        runtime: 0,
         director: "",
         actors: "",
         plot: "",
@@ -54,6 +55,7 @@ const MovieDetails = () => {
             ...inputs,
             title: movie.title,
             year: movie.year,
+            runtime: movie.runtime,
             director: movie.director,
             actors: movie.actors,
             plot: movie.plot,
