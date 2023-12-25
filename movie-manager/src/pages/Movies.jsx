@@ -31,7 +31,6 @@ const Movies = () => {
         fetchMovies();
     }, [page]);
 
-
     const changePage = (event, value) => {
         setPage(value);
     }

@@ -157,21 +157,6 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAzOTM4MzEwNl5BMl5BanBnXkFtZTgwMzU1OTc1MDE@._V1_SX300.jpg"
     },
     {
-      "id": 20,
-      "title": "Sid and Nancy",
-      "year": "1986",
-      "runtime": "112",
-      "genres": [
-        "Biography",
-        "Drama",
-        "Music"
-      ],
-      "director": "Alex Cox",
-      "actors": "Gary Oldman, Chloe Webb, David Hayman, Debby Bishop",
-      "plot": "Morbid biographical story of Sid Vicious, bassist with British punk group the Sex Pistols, and his girlfriend Nancy Spungen. When the Sex Pistols break up after their fateful US tour, ...",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjExNjA5NzY4M15BMl5BanBnXkFtZTcwNjQ2NzI5NA@@._V1_SX300.jpg"
-    },
-    {
       "id": 21,
       "title": "Black Swan",
       "year": "2010",
@@ -912,21 +897,6 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM5ODA4MjYxM15BMl5BanBnXkFtZTcwMTM3NTE5Ng@@._V1_SX300.jpg"
     },
     {
-      "id": 107,
-      "title": "Chinatown",
-      "year": "1974",
-      "runtime": "130",
-      "genres": [
-        "Drama",
-        "Mystery",
-        "Thriller"
-      ],
-      "director": "Roman Polanski",
-      "actors": "Jack Nicholson, Faye Dunaway, John Huston, Perry Lopez",
-      "plot": "A private detective hired to expose an adulterer finds himself caught up in a web of deceit, corruption and murder.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BN2YyNDE5NzItMjAwNC00MGQxLTllNjktZGIzMWFkZjA3OWQ0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg"
-    },
-    {
       "id": 108,
       "title": "Calvary",
       "year": "2014",
@@ -1339,18 +1309,18 @@
     },
     {
       "id": 146,
-      "title": "The Big Short",
-      "year": "2015",
+      "title": "Оно",
+      "year": "2017",
       "runtime": "130",
       "genres": [
-        "Biography",
-        "Comedy",
-        "Drama"
+        "Crime",
+        "Drama",
+        "Mystery"
       ],
-      "director": "Adam McKay",
-      "actors": "Ryan Gosling, Rudy Eisenzopf, Casey Groves, Charlie Talbert",
-      "plot": "Four denizens in the world of high-finance predict the credit and housing bubble collapse of the mid-2000s, and decide to take on the big banks for their greed and lack of foresight.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BNDc4MThhN2EtZjMzNC00ZDJmLThiZTgtNThlY2UxZWMzNjdkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg"
+      "director": "Roman",
+      "actors": "Jack Nicholson, Faye Dunaway",
+      "plot": "Когда в городке Дерри штата Мэн начинают пропадать дети, несколько ребят сталкиваются со своими величайшими страхами — не только с группой школьных хулиганов, но со злобным клоуном Пеннивайзом, список жертв которого уходит вглубь веков.",
+      "posterUrl": "https://avatars.dzeninfra.ru/get-zen_doc/1546191/pub_5cd156526f616900b2129de4_5cd161f6220cec00af74b847/scale_1200"
     }
   ]
 }

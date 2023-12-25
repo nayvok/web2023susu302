@@ -19,6 +19,19 @@ export default class MovieService {
         await axios.delete(`http://192.168.0.129:3000/movies/${movie}`)
     }
 
+    static async editMovie(id, data) {
+        await axios.patch(`http://192.168.0.129:3000/movies/${id}`, {
+            title: data.title,
+            year: data.year,
+            director: data.director,
+            actors: data.actors,
+            plot: data.plot,
+            genres: data.genres,
+            posterUrl: data.posterUrl
+        })
+    }
+
+
     static async getById(id) {
         return await axios.get(`http://192.168.0.129:3000/movies/${id}`);
     }

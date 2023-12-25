@@ -46,7 +46,7 @@ const MovieInfo = ({movie}) => {
                                             Жанр
                                         </Typography>
                                     </Grid>
-                                    <Grid item xs={6} sm={4} md={5}>
+                                    <Grid item xs={6} sm={4} md={6}>
                                         <Typography variant={"subtitle1"}
                                                     sx={{paddingLeft: 1 / 2, paddingTop: 1, fontWeight: 500}}>
                                             {movie.year}
